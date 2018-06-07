@@ -12,6 +12,7 @@
 		B21D78B620C8F7B4004571AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21D78B420C8F7B4004571AF /* Main.storyboard */; };
 		B21D78B820C8F7B6004571AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21D78B720C8F7B6004571AF /* Assets.xcassets */; };
 		B21D78BB20C8F7B6004571AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21D78B920C8F7B6004571AF /* LaunchScreen.storyboard */; };
+		B21D78C320C8F9AB004571AF /* areaList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21D78C220C8F9AB004571AF /* areaList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B21D78B720C8F7B6004571AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21D78BA20C8F7B6004571AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21D78BC20C8F7B6004571AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B21D78C220C8F9AB004571AF /* areaList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = areaList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				B21D78B720C8F7B6004571AF /* Assets.xcassets */,
 				B21D78B920C8F7B6004571AF /* LaunchScreen.storyboard */,
 				B21D78BC20C8F7B6004571AF /* Info.plist */,
+				B21D78C220C8F9AB004571AF /* areaList.plist */,
 			);
 			path = sampleMapPlist;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21D78BB20C8F7B6004571AF /* LaunchScreen.storyboard in Resources */,
+				B21D78C320C8F9AB004571AF /* areaList.plist in Resources */,
 				B21D78B820C8F7B6004571AF /* Assets.xcassets in Resources */,
 				B21D78B620C8F7B4004571AF /* Main.storyboard in Resources */,
 			);

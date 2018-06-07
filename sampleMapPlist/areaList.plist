@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>矢場とん</key>
+	<dict>
+		<key>description</key>
+		<string>味噌カツ食べたい
+改行はオプション</string>
+		<key>latitude</key>
+		<string>35.2749215</string>
+		<key>longitude</key>
+		<string>136.9391058</string>
+	</dict>
+	<key>クローチェ</key>
+	<dict>
+		<key>description</key>
+		<string>クローチェの詳細情報</string>
+		<key>latitude</key>
+		<string>35.3175082</string>
+		<key>longitude</key>
+		<string>136.7641828</string>
+	</dict>
+	<key>コメダ珈琲</key>
+	<dict>
+		<key>description</key>
+		<string>詳細情報うにゃうにゃ</string>
+		<key>latitude</key>
+		<string>35.1378736</string>
+		<key>longitude</key>
+		<string>136.9504091</string>
+	</dict>
+</dict>
+</plist>
