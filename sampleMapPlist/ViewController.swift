@@ -8,12 +8,19 @@
 
 import UIKit
 import MapKit
+import CoreLocation  // 現在地取得用
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+    ,MKMapViewDelegate
+    ,CLLocationManagerDelegate
+{
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var placeMapView: MKMapView!
+    
+    // 現在地取得用
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +60,16 @@ class ViewController: UIViewController {
             // 地図に刺す
             placeMapView.addAnnotation(pin)
             
+            placeMapView.delegate = self
+            
+            
+            // 位置情報使用開始
+            locationManager.startUpdatingLocation()
+            
+            // 位置情報使用許可のリクエスト表示
+            locationManager.requestWhenInUseAuthorization()
+            
+            locationManager.delegate = self
         }
         
         // 地図の設定 中心と表示範囲を指定
@@ -64,6 +81,55 @@ class ViewController: UIViewController {
         
         placeMapView.setRegion(region, animated: true)
         
+    }
+    
+    // ピンがタップされた時に発動
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print((view.annotation?.title!)!)
+        titleLabel.text = view.annotation?.title!
+        detailTextView.text = view.annotation?.subtitle!
+    }
+    
+    
+    // ピンの見た目を変更する
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        print(#function)
+        
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView?.canShowCallout = true  // 吹き出しのありなし
+            
+            
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        
+        let pinImage = UIImage(named: "pinimage.png")
+        annotationView?.image = pinImage
+        annotationView?.frame.size = CGSize(width: 100, height: 100)
+
+        
+        return annotationView
+        
+        
+    }
+    
+    
+    
+    // 位置情報がアップデートされた時に発動
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(#function,"first:",locations.first!)
+        print(#function,"last:",locations.last!)
+        print(locations.count)
     }
 
     override func didReceiveMemoryWarning() {
